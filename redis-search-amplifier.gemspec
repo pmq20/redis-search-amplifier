@@ -11,6 +11,8 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = ">= 1.3.6"
 
+  s.add_dependency("resque")
+  s.add_dependency("activesupport")
   s.add_dependency("redis-search", ">= 0.8.0")
   s.add_dependency("redis", [">= 2.1.1"])
 

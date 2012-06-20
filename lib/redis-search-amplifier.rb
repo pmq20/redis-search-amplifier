@@ -1,7 +1,6 @@
 require 'redis/search/amplifier/helpers'
 require 'redis/search/amplifier/utils'
 require 'redis/search/amplifier/shared'
-require 'redis/search/amplifier/railtie' if defined?(Rails)
 
 class Redis;module Search;module Amplifier
   
@@ -44,3 +43,6 @@ class Redis;module Search;module Amplifier
   end
 
 end;end;end
+
+require 'redis/search/amplifier/shared'
+require 'redis/search/amplifier/railtie' if defined?(Rails)
