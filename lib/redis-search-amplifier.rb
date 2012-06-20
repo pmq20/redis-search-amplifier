@@ -5,6 +5,7 @@ require 'redis/search/amplifier/shared'
 class Redis;module Search;module Amplifier
   
   autoload :Google,   'redis/search/amplifier/google'
+  autoload :GoogleTranslator,   'redis/search/amplifier/google_translator'
   autoload :Baidu,   'redis/search/amplifier/baidu'
   
   class << self
@@ -15,7 +16,7 @@ class Redis;module Search;module Amplifier
   # 以后可以随时修改配置
   @config = OpenStruct.new
   # default values for config
-  @config.search_engines = [Redis::Search::Baidu,Redis::Search::Google]
+  @config.consultants = [Baidu,Google]
   @config.google_client_id = nil
   @config.google_client_secret = nil
   @config.logger = Logger.new('/dev/null')
@@ -37,6 +38,8 @@ class Redis;module Search;module Amplifier
   # * user
   # * pass
   @config.mechanize_per_page = 88
+  # this is required, however
+  @config.redis = nil
 
   def self.configure
     yield(@config)
@@ -44,5 +47,5 @@ class Redis;module Search;module Amplifier
 
 end;end;end
 
-require 'redis/search/amplifier/shared'
+require 'redis/search/amplifier/base'
 require 'redis/search/amplifier/railtie' if defined?(Rails)
