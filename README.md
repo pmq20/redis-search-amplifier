@@ -1,3 +1,8 @@
+not finished yet!!
+-----------------------------
+
+
+
 Commander, this is the psychic amplifier.
 
 ![RA2-Psychic-Amplifier.jpg](https://github.com/pmq20/redis-search-amplifier/raw/master/RA2-Psychic-Amplifier.jpg)
